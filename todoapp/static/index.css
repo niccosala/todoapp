@@ -1,0 +1,128 @@
+html, body, p, h2, div, a, button, textarea, input {
+    font-family: helvetica;
+    font-weight: lighter;
+    animation: hello .5s;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.item {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    padding: 1em;
+    background-color: white;
+    border: 1px solid gainsboro;
+    list-style-type: none;
+    color: black;
+    width: calc(60% - 3.6em);
+    margin-top: .8em;
+    margin-bottom: .8em;
+    margin-left: .8em;
+    border-radius: .25em;
+    box-shadow: 0 0 3px .5px #FAFAFA;
+}
+
+li.completed {
+    opacity: .6;
+}
+
+span.date {
+    font-size: 75%;
+    color: gray;
+}
+
+span.title-completed {
+    text-decoration: line-through;
+}
+
+.delete-options {
+    padding: .8em;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    width: calc(60% - 1.6em);
+    display: flex;
+    background-color: #fafafa;
+    border-top: 1px solid gainsboro;
+}
+
+.delete-options a {
+    margin-right: 1em;
+    font-size: 90%;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.delete-options a:nth-child(1) {
+    background-color: gray;
+}
+
+.delete-options a:nth-child(2) {
+    background-color: brown;
+}
+
+form {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1.5em;
+    width: calc(40% - 3em);
+    height: calc(100% - 2em);
+    border-left: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    background-color: #393a48;
+    color: white;
+}
+
+form h2 {
+    margin-top: .2em;
+    text-align: center;
+}
+
+form input[type=text] {
+    color: black;
+    font-size: 100%;
+    padding: .8em;
+    font-weight: lighter;
+    border: 0;
+}
+
+form textarea {
+    color: black;
+    font-size: 100%;
+    height: 80%;
+    padding: .8em;
+    resize: none;
+    border: 0;
+}
+
+form input[type=submit] {
+    font-size: 90%;
+    padding: 1em;
+    background-color: #07920a;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+@keyframes hello {
+    0% { opacity: 0 }
+    90% { opacity: 1 }
+}

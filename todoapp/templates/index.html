@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDo App</title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    </head>
+    <body>
+        <ul>
+            {% for todo in todo_list %}
+            <a href="{{ url_for('show_details', oid=todo._id )}}" class="item">
+                <li {% if todo.expired %} class="completed" {% endif %}>
+                    <span class="date">
+                        {{ todo.date }}
+                    </span>
+                    &emsp;
+                    <span {% if todo.expired %} class="title-completed" {% endif %}>
+                        {{ todo.title }}
+                    </span>
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+
+        <form method="POST" action="{{ url_for('add_note') }}">
+            <h2>Aggiungi una nota</h2>
+            <input type="text" name="title" placeholder="Titolo">
+            <textarea name="body" placeholder="Ricordati di..."></textarea>
+            <input type="submit" value="AGGIUNGI">
+        </form>
+
+        <div class="delete-options">
+            <a type="button" href="{{ url_for('delete_completed') }}">ELIMINA NOTE COMPLETATE</a>
+            <a type="button" href="{{ url_for('delete_all') }}">ELIMINA TUTTE LE NOTE</a>
+        </div>
+    </body>
+</html>

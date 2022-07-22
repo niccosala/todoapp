@@ -1,0 +1,77 @@
+html, body, p, h2, div, a, button, textarea, input {
+    font-family: helvetica;
+    font-weight: lighter;
+    animation: hello .5s;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+div.header {
+    width: calc(100% - 4em);
+    padding: 2em;
+    border-bottom: 1px solid silver;
+    margin-bottom: 1em;
+}
+
+a {
+    padding: 1em;
+    margin-right: 1em;
+    font-size: 90%;
+    text-decoration: none;
+}
+
+a.back {
+    color: gray;
+    border: 1px solid silver;
+}
+
+a.delete {
+    background-color: brown;
+    color: white;
+}
+
+a.todo {
+    color: white;
+    background-color: #FFA500;
+}
+
+a.completed {
+    color: white;
+    background-color: #07920a;
+}
+
+div.note-container {
+    width: calc(100% - 4.1em);
+    padding: .5em 2.05em;
+    display: flex;
+    flex-direction: column;
+}
+
+span.title {
+    font-size: 170%;
+    font-weight: normal;
+    margin-bottom: .2em;
+}
+
+span.body {
+    font-size: 125%;
+    margin-bottom: 1.5em;
+}
+
+span.info {
+    font-size: 100%;
+    color: gray;
+    margin-bottom: .3em;
+}
+
+@keyframes hello {
+    0% { opacity:  0 }
+    90% { opacity: 1 }
+}

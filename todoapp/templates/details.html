@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDo App</title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='details.css')}}">
+    </head>
+    <body>
+        <div class="header">
+            <a class="back" href="{{ url_for('index') }}">&lt; TORNA ALLE NOTE</a>
+            {% if item.expired %}
+            <a class="todo" href="{{ url_for('mark_as_todo', oid=item._id) }}">CONTRASSEGNA COME DA FARE</a>
+            {% else %}
+            <a class="completed" href="{{ url_for('mark_as_completed', oid=item._id) }}">CONTRASSEGNA COME FATTO</a>
+            {% endif %}
+            <a class="delete" href="{{ url_for('delete_specific', oid=item._id )}}">ELIMINA NOTA</a>
+        </div>
+
+        <div class="note-container">
+            <span class="title">
+                {{ item.title }}
+            </span>
+
+            <span class="body">
+                {{ item.body }}
+            </span>
+
+            <span class="info">
+                Creazione: {{ item.date }}
+            </span>
+
+            <span class="info">
+                Stato:
+                {% if item.expired %}
+                Completato.
+                {% else %}
+                Da fare.
+                {% endif %}
+            </span>
+        </div>
+
+    </body>
+</html>
